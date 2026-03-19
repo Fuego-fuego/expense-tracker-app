@@ -12,6 +12,13 @@
   --clr-neutral-800:#262626;
   --clr-neutral-900:#000;
 
+  --ff-primary:"Poppins", sans-serif;
+  --ff-secondary:"Inter", sans-serif;
+
+  --ff-heading:var(--ff-primary);
+  --ff-body:var(--ff-secondary);
+
+
   --fw-regular:400;
   --fw-semi-bold:600;
   --fw-bold:800;
@@ -20,6 +27,12 @@
   --fs-400:1rem;
   --fs-600:1.25rem;
   --fs-800:2rem;
+
+  --fs-primary-heading:var(--fs-600);
+  --fs-secondary-heading:var(--fs-400);
+  --fs-body:var(--fs-300);
+  --fs-total-balance:var(--fs-800);
+
   
 }
 

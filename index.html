@@ -16,61 +16,81 @@
   <!-- main js script -->
   <script type="module" src="/src/main.js" defer></script>
 </head>
+
 <body>
   <main>
     <div class="container">
       <div class="main-content-wrapper">
-      <section class="dashboard">
-        <header>
-          <div><img src="./src/assets/images/logo/logo-default.svg" alt=""></div>
-          <h1 class="fs-primary-heading uppercase fw-bold">Expense Tracker</h1>
-        </header>
-        <!-- Balance Summary-->
-        <div class="balance-summary">
-          <div class="flow" style="--flow-spacer:1rem">
-            <h2 class="fs-secondary-heading fw-semi-bold capitalize">
-              balance  summary 
-            </h2>
-            <p class="capitalize">total balance</p>
-            <p class="fs-800 fw-bold">ksh.o</p>
+        <section class="dashboard">
+          <header>
+            <div class="header-content-wrapper | flex">
+              <a href="#">
+                <svg class="logo">
+                  <use xlink:href="../src/assets/images/logo/logo.svg#logo"></use>
+                </svg>
+              </a>
+              <h1 class="text-clr-900 fs-primary-heading uppercase fw-semi-bold">Expense Tracker</h1>
+            </div>
+          </header>
+          <!-- Balance Summary-->
+          <div class="balance-summary | flow" style="--flow-spacer:0.7rem">
+            <div>
+              <h2 class="text-clr-800 fs-secondary-heading capitalize">
+                balance summary
+              </h2>
+            </div>
+            <div class="total-balance">
+              <p class="capitalize">total balance</p>
+              <p class="text-clr-900 fs-800 fw-bold">0/=</p>
+            </div>
           </div>
           <!--Total Income & Total Expense -->
           <div>
-            <div class="flex">
-                <div>
-                  <p class="capitalize">total income</p>
-                  <p class="text-accent-green-400 fs-secondary-heading fw-bold">ksh.300000</p>
+            <div class=" total-income-and-expense | flex">
+              <div>
+                <p class="capitalize">total income</p>
+                <p class="text-accent-green-400 fs-secondary-heading fw-bold">ksh.300000</p>
+              </div>
+              <div>
+                <p class="capitalize">total expense</p>
+                <p class="text-accent-red-400 fs-secondary-heading fw-bold">ksh.300000</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Transaction History -->
+        <section class="transaction-history">
+          <h2 class="text-clr-900 fs-primary-heading fw-semi-bold capitalize">transaction history</h2>
+          <ul class="transaction-history-list" role="list">
+            <li class="transaction" data-type="income">
+              <div>
+                <h3 class="text-clr-900 capitalize fs-secondry-heading fw-semi-bold">salary</h3>
+                <p>Mar 20,2026</p>
+              </div>
+              <p class="amount | fw-bold">+3000000/=</p>
+                <div class="delete-icon-wrapper">
+                  <svg class="delete-icon">
+                    <use xlink:href="../src/assets/images/misc/delete.svg#delete-icon"></use>
+                  </svg>
                 </div>
-                <div>
-                  <p class="capitalize">total expense</p>
-                  <p class="text-accent-red-400 fs-secondary-heading fw-bold">ksh.300000</p>
-                </div>
-            </div>            
-          </div>
-        </div>
-      </section>
-      <!-- Transaction History -->
-      <section class="transaction">
-        <h2 class="fs-primary-heading fw-bold capitalize">transaction history</h2>
-      <ul class="transaction-history-list">
-        <li class="transaction" data-type="income">
-          <div>
-            <h3 class="capitalize fs-secondry-heading fw-bold">salary</h3>
-            <p>3000000/=</p>
-            <button class="delete-btn"></button>
-          </div>
-        </li>
-        <li class="transaction" data-type="expense">
-          <div>
-            <h3 class="capitalize fs-secondry-heading fw-bold">tithe</h3>
-            <p>30000/=</p>
-            <button class="delete-btn"></button>
-          </div>
-        </li>
-      </ul>
-      </section>
+              </li>
+            <li class="transaction" data-type="expense">
+              <div>
+                <h3 class="text-clr-900 capitalize fs-secondry-heading fw-semi-bold">tithe</h3>
+                <p>Mar 20,2026</p>
+              </div>
+              <p class="amount | fw-bold">-30000/=</p>
+                                <div class="delete-icon-wrapper">
+                  <svg class="delete-icon">
+                    <use xlink:href="../src/assets/images/misc/delete.svg#delete-icon"></use>
+                  </svg>
+                </div>              
+            </li>
+          </ul>
+        </section>
       </div>
-    </div>    
+    </div>
   </main>
 </body>
+
 </html>

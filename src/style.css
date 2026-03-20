@@ -2,15 +2,18 @@
     ROOT 
 ===================== */
 :root{
-
+  --clr-accent-orange-400:#ff9100;
   --clr-accent-red-400:#9c2a22;
   --clr-accent-green-400:#4caf50;
 
   --clr-neutral-100:#ffffff;
-  --clr-neutral-300:#a5a5a5;
+  --clr-neutral-200:hsl(0, 0%, 87%);
+  --clr-neutral-300:hsl(0, 0%, 55%);
   --clr-neutral-600:#444444;
-  --clr-neutral-800:#262626;
+  --clr-neutral-800:#151515;
   --clr-neutral-900:#000;
+
+  --logo-clr:var(--clr-accent-orange-400);
 
   --ff-primary:"Poppins", sans-serif;
   --ff-secondary:"Inter", sans-serif;
@@ -32,7 +35,7 @@
   --fs-secondary-heading:var(--fs-400);
   --fs-body:var(--fs-300);
   
-
+  --border-radius:12px;
   
 }
 
@@ -105,10 +108,132 @@ picture {
 }
 
 /* =====================
-    UTILITY 
+    GLOBAL STYLES
+===================== */
+body{
+  color:var(--clr-neutral-300);
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  background-color: var(--clr-neutral-900);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  font-family: var(--ff-heading);
+}
+
+
+.main-content-wrapper{
+  margin-top: 1.4rem;
+  display:grid;
+  gap:1.4rem;
+}
+@media(min-width:50em){
+  .main-content-wrapper{
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr 2fr;
+}
+
+}
+section {  
+  background:var(--clr-neutral-800);
+  border-radius:var(--border-radius);
+  padding: 1rem 2rem;
+}
+
+/* =====================
+    COMPONENTS
 ===================== */
 
+/* =====================
+    Dashboard
+===================== */
+.header-content-wrapper{
+  align-items: center;
+  gap:0.5rem;
+  margin-block-end: 1.5rem;
+}
+.logo{  
+  fill: var(--logo-clr);
+  width:2.3rem;
+  aspect-ratio: 1;  
+  background-image:linear-gradient(135deg, #ff00cc, #7b2ff7, #ff6a00);
+  border-radius:100vw ;
+}
+/*  Balance Summary*/
+.balance-summary{
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid var(--clr-neutral-600);
+}
+/* Total Balance */
+.total-income-and-expense{
+  margin-top: 1rem;
+  justify-content: space-between;
+  
+}
 
+/* =====================
+    Transaction History
+===================== */
+.transaction-history-list{
+  margin-top: 1rem;
+  display: grid;
+  gap:1rem;
+}
+
+.transaction-history-list li{
+  list-style-type: none;
+
+  }
+.transaction{
+  position:relative;
+  display: grid;
+  align-items: center;
+  grid-auto-flow: column;
+  grid-auto-columns:min-content 1fr min-content max-content ;
+  gap:1rem;
+  padding: 1rem;
+  border: 1px solid var(--clr-neutral-600);
+  border-radius: var(--border-radius);
+}
+.transaction[data-type="income"]::before,
+.transaction[data-type="expense"]::before{
+padding:0.5rem;
+border-radius: 100%;
+display:grid;
+place-items: center;
+}
+.transaction[data-type="income"]::before{
+  content: url(./assets/images/misc/keyboard_arrow_up.svg);
+  background-color: var(--clr-accent-green-400);
+}
+
+.transaction[data-type="expense"]::before{
+  content: url(./assets/images/misc/keyboard_arrow_down.svg);
+  background-color: var(--clr-accent-red-400);
+}
+  
+
+.transaction[data-type="income"]>.amount{
+  color:var(--clr-accent-green-400);
+}
+.transaction[data-type="expense"]>.amount{
+  color:var(--clr-accent-red-400);
+}
+.delete-icon{
+  cursor: pointer;
+  fill:var(--clr-neutral-200);
+  width:1.5rem;
+  aspect-ratio: 1;
+}
+
+.delete-icon:is(:hover,:focus-visible){
+fill:var(--clr-accent-red-400);
+}
 /* =====================
     UTILITY 
 ===================== */
@@ -118,6 +243,18 @@ picture {
 .text-accent-red-400{
   color:var(--clr-accent-red-400);
 }
+
+.text-clr-900{
+  color:var(--clr-neutral-100);
+}
+
+.text-clr-800{
+  color:var(--clr-neutral-200);
+}
+
+
+
+
 .fs-primary-heading{
   font-size: var(--fs-primary-heading);
 }
@@ -146,12 +283,14 @@ picture {
 .container {
   --max-width:1200px;
   width: min(var(--max-width), 100% - 2rem );
+  margin-inline: auto;
 }
 
-:where(.flow>*:not(:first-child)){
-  margin-top: var(--flow-spacer, 2rem);
-}
+:where(.flow > *:not(:first-child)){
+  margin-top: var(--flow-spacer, 1rem);
+  }
 
 .flex{
   display:flex;  
 }
+

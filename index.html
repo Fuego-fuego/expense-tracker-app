@@ -49,49 +49,50 @@
             <div class=" total-income-and-expense | flex">
               <div>
                 <p class="capitalize">total income</p>
-                <p class="text-accent-green-400 fs-secondary-heading fw-bold">ksh.300000</p>
+                <p class="text-accent-green-400 fs-secondary-heading fw-semi-bold">ksh.300000</p>
               </div>
               <div>
                 <p class="capitalize">total expense</p>
-                <p class="text-accent-red-400 fs-secondary-heading fw-bold">ksh.300000</p>
+                <p class="text-accent-red-400 fs-secondary-heading fw-semi-bold">ksh.300000</p>
               </div>
             </div>
           </div>
           <!-- FORM-->
-           <form class="new-transaction-form" action="">
+           <form class="new-transaction-form | flow" action="">
             <!-- Type & Amount  -->
-              <h2 class="text-clr-800 fs-secondary-heading capitalize">
+              <h2 class="text-clr-800 fs-secondary-heading capitalize ">
                 add new transaction
               </h2>
-            <div class="new-transaction-form-group | flex ">
+            <div class="new-transaction-form-group">
               <!-- Type -->
-              <div class="new-transaction-form-type-wrapper | form-input-wrapper">
+              <div class="new-transaction-form-type-wrapper | new-transaction-form-input-wrapper">
                 <label class="capitalize" for="new-transaction-form-type">type</label>
-                <select class="capitalize" name="new-transaction-form-type" id="new-transaction-form-type">
+                <select class="new-transaction-form-input  | capitalize" name="new-transaction-form-type" id="new-transaction-form-type">
                   <option value="income">income</option>
                   <option value="expense">expense</option>
                 </select>
               </div>
               <!-- Amount -->
-              <div class="new-transaction-form-amount-wrapper | form-input-wrapper">
-                <label class="capitalize" for="new-transaction-form-amount">amount</label>
-                <input type="text" id="new-transaction-form-amount" name="new-transaction-form-amount">
+              <div class="new-transaction-form-amount-wrapper | new-transaction-form-input-wrapper">
+                <label class="capitalize" for="new-transaction-form-amount" >amount</label>
+                <input class="new-transaction-form-input" type="text" id="new-transaction-form-amount" name="new-transaction-form-amount" placeholder="0/=">
               </div>
             </div>
               <!-- Date & Category  -->
-            <div class="new-transaction-form-group | flex">
+            <div class="new-transaction-form-group">
               <!-- Date -->
-              <div class="new-transaction-form-date-wrapper | form-input-wrapper">
+              <div class="new-transaction-form-date-wrapper | new-transaction-form-input-wrapper">
                 <label class="capitalize" for="new-transaction-form-date">date</label>
-                <input type="date" id="new-transaction-form-date" name="new-transaction-form-date">
+                <input class="new-transaction-form-input" type="date" id="new-transaction-form-date" name="new-transaction-form-date">
               </div>
               <!-- Category -->
-              <div class="new-transaction-form-category-wrapper | form-input-wrapper">
+              <div class="new-transaction-form-category-wrapper | new-transaction-form-input-wrapper">
                 <label class="capitalize" for="new-transaction-form-category">category</label>
-                <input type="text" id="new-transaction-form-category" name="new-transaction-form-category">
-              </div>
+                <input class="new-transaction-form-input" type="text" id="new-transaction-form-category" name="new-transaction-form-category" placeholder="e.g. Salary, Rent">
+              </div> 
             </div>
-            <div class="new-transaction-form-submit-btn-wrapper"><input class="capitalize" type="submit" value="add transaction"></div>
+            <!-- Submit Button -->
+            <div class="new-transaction-form-submit-btn-wrapper"><input class="new-transaction-form-submit-btn | capitalize" type="submit" value="add transaction"></div>
            </form>
         </section>
         <!-- Transaction History -->

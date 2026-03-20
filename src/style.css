@@ -9,6 +9,7 @@
   --clr-neutral-100:#ffffff;
   --clr-neutral-200:hsl(0, 0%, 87%);
   --clr-neutral-300:hsl(0, 0%, 55%);
+  --clr-neutral-500:hsl(0, 0%, 41%);
   --clr-neutral-600:#444444;
   --clr-neutral-800:#151515;
   --clr-neutral-900:#000;
@@ -35,7 +36,8 @@
   --fs-secondary-heading:var(--fs-400);
   --fs-body:var(--fs-300);
   
-  --border-radius:12px;
+  --border-radius-l:12px;
+  --border-radius-m:8px;
   
 }
 
@@ -125,12 +127,18 @@ h5,
 h6{
   font-family: var(--ff-heading);
 }
-
+main,.dashboard{
+  min-height: 80vh;
+  min-height: 80dvh;
+  
+}
 
 .main-content-wrapper{
   margin-top: 1.4rem;
   display:grid;
-  gap:1.4rem;
+  gap:1rem
+  /* border:1px solid green; */
+  /* height: inherit; */
 }
 @media(min-width:50em){
   .main-content-wrapper{
@@ -140,9 +148,9 @@ h6{
 
 }
 section {  
-  background:var(--clr-neutral-800);
-  border-radius:var(--border-radius);
-  padding: 1rem 2rem;
+  background-color:var(--clr-neutral-800);
+  border-radius:var(--border-radius-l);
+  padding: 1rem 1.6rem;
 }
 
 /* =====================
@@ -175,6 +183,60 @@ section {
   justify-content: space-between;
   
 }
+/* =====================
+    Form
+===================== */
+.new-transaction-form{
+  padding-block-start: 2rem;
+}
+.new-transaction-form-group{
+  display:grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr 1fr;
+  gap:1rem;
+}
+.new-transaction-form-group>*{
+  min-width: 50%;
+}
+.new-transaction-form-input-wrapper{
+  display:flex;
+  flex-direction: column;
+  gap:0.5rem;
+}
+.new-transaction-form-input{
+  padding:0.6rem 1rem;
+  background-color:var(--clr-neutral-800);
+  color:var(--clr-neutral-200);
+  border-radius: var(--border-radius-m);
+  border:1px solid var(--clr-neutral-600);
+}
+
+.new-transaction-form-input:is(:focus,:focus-within){
+  outline:none;
+  border:1px solid var(--clr-neutral-500);
+}
+.new-transaction-form-submit-btn-wrapper,
+.new-transaction-form-submit-btn{
+  min-width: 100%;
+}
+
+.new-transaction-form-submit-btn-wrapper{
+  margin-block-start: 3rem;  
+}
+
+.new-transaction-form-submit-btn{
+  cursor: pointer;
+  color:var(--clr-neutral-200);
+  padding-block:0.55rem;  
+  background-color: var(--clr-neutral-600);
+  border:none;
+  border-radius: var(--border-radius-m);
+}
+
+.new-transaction-form-submit-btn:hover{
+  color:var(--clr-neutral-100);
+  background-color: var(--clr-neutral-500);
+}
 
 /* =====================
     Transaction History
@@ -198,7 +260,7 @@ section {
   gap:1rem;
   padding: 1rem;
   border: 1px solid var(--clr-neutral-600);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-m);
 }
 .transaction[data-type="income"]::before,
 .transaction[data-type="expense"]::before{

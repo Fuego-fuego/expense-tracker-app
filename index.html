@@ -57,6 +57,42 @@
               </div>
             </div>
           </div>
+          <!-- FORM-->
+           <form class="new-transaction-form" action="">
+            <!-- Type & Amount  -->
+              <h2 class="text-clr-800 fs-secondary-heading capitalize">
+                add new transaction
+              </h2>
+            <div class="new-transaction-form-group | flex ">
+              <!-- Type -->
+              <div class="new-transaction-form-type-wrapper | form-input-wrapper">
+                <label class="capitalize" for="new-transaction-form-type">type</label>
+                <select class="capitalize" name="new-transaction-form-type" id="new-transaction-form-type">
+                  <option value="income">income</option>
+                  <option value="expense">expense</option>
+                </select>
+              </div>
+              <!-- Amount -->
+              <div class="new-transaction-form-amount-wrapper | form-input-wrapper">
+                <label class="capitalize" for="new-transaction-form-amount">amount</label>
+                <input type="text" id="new-transaction-form-amount" name="new-transaction-form-amount">
+              </div>
+            </div>
+              <!-- Date & Category  -->
+            <div class="new-transaction-form-group | flex">
+              <!-- Date -->
+              <div class="new-transaction-form-date-wrapper | form-input-wrapper">
+                <label class="capitalize" for="new-transaction-form-date">date</label>
+                <input type="date" id="new-transaction-form-date" name="new-transaction-form-date">
+              </div>
+              <!-- Category -->
+              <div class="new-transaction-form-category-wrapper | form-input-wrapper">
+                <label class="capitalize" for="new-transaction-form-category">category</label>
+                <input type="text" id="new-transaction-form-category" name="new-transaction-form-category">
+              </div>
+            </div>
+            <div class="new-transaction-form-submit-btn-wrapper"><input class="capitalize" type="submit" value="add transaction"></div>
+           </form>
         </section>
         <!-- Transaction History -->
         <section class="transaction-history">

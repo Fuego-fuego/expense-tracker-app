@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +15,6 @@
   <!-- main js script -->
   <script type="module" src="/src/main.js" defer></script>
 </head>
-
 <body>
   <main>
     <div class="container">
@@ -58,42 +56,47 @@
             </div>
           </div>
           <!-- FORM-->
-           <form class="new-transaction-form | flow" action="">
+          <form class="new-transaction-form | flow" action="">
             <!-- Type & Amount  -->
-              <h2 class="text-clr-800 fs-secondary-heading capitalize ">
-                add new transaction
-              </h2>
+            <h2 class="text-clr-800 fs-secondary-heading capitalize ">
+              add new transaction
+            </h2>
             <div class="new-transaction-form-group">
               <!-- Type -->
               <div class="new-transaction-form-type-wrapper | new-transaction-form-input-wrapper">
                 <label class="capitalize" for="new-transaction-form-type">type</label>
-                <select class="new-transaction-form-input  | capitalize" name="new-transaction-form-type" id="new-transaction-form-type">
+                <select class="new-transaction-form-input  | capitalize" name="new-transaction-form-type"
+                  id="new-transaction-form-type">
                   <option value="income">income</option>
                   <option value="expense">expense</option>
                 </select>
               </div>
               <!-- Amount -->
               <div class="new-transaction-form-amount-wrapper | new-transaction-form-input-wrapper">
-                <label class="capitalize" for="new-transaction-form-amount" >amount</label>
-                <input class="new-transaction-form-input" type="text" id="new-transaction-form-amount" name="new-transaction-form-amount" placeholder="0/=">
+                <label class="capitalize" for="new-transaction-form-amount">amount</label>
+                <input class="new-transaction-form-input" type="text" id="new-transaction-form-amount"
+                  name="new-transaction-form-amount" placeholder="0/=">
               </div>
             </div>
-              <!-- Date & Category  -->
+            <!-- Date & Category  -->
             <div class="new-transaction-form-group">
               <!-- Date -->
               <div class="new-transaction-form-date-wrapper | new-transaction-form-input-wrapper">
                 <label class="capitalize" for="new-transaction-form-date">date</label>
-                <input class="new-transaction-form-input" type="date" id="new-transaction-form-date" name="new-transaction-form-date">
+                <input class="new-transaction-form-input" type="date" id="new-transaction-form-date"
+                  name="new-transaction-form-date">
               </div>
               <!-- Category -->
               <div class="new-transaction-form-category-wrapper | new-transaction-form-input-wrapper">
                 <label class="capitalize" for="new-transaction-form-category">category</label>
-                <input class="new-transaction-form-input" type="text" id="new-transaction-form-category" name="new-transaction-form-category" placeholder="e.g. Salary, Rent">
-              </div> 
+                <input class="new-transaction-form-input" type="text" id="new-transaction-form-category"
+                  name="new-transaction-form-category" placeholder="e.g. Salary, Rent">
+              </div>
             </div>
             <!-- Submit Button -->
-            <div class="new-transaction-form-submit-btn-wrapper"><input class="new-transaction-form-submit-btn | capitalize" type="submit" value="add transaction"></div>
-           </form>
+            <div class="new-transaction-form-submit-btn-wrapper"><input
+                class="new-transaction-form-submit-btn | capitalize" type="submit" value="add transaction"></div>
+          </form>
         </section>
         <!-- Transaction History -->
         <section class="transaction-history">
@@ -105,29 +108,88 @@
                 <p>Mar 20,2026</p>
               </div>
               <p class="amount | fw-bold">+3000000/=</p>
-                <div class="delete-icon-wrapper">
-                  <svg class="delete-icon">
-                    <use xlink:href="../src/assets/images/misc/delete.svg#delete-icon"></use>
-                  </svg>
-                </div>
-              </li>
+              <div class="delete-icon-wrapper">
+                <svg class="delete-icon">
+                  <use xlink:href="../src/assets/images/misc/delete.svg#delete-icon"></use>
+                </svg>
+              </div>
+            </li>
             <li class="transaction" data-type="expense">
               <div>
                 <h3 class="text-clr-900 capitalize fs-secondry-heading fw-semi-bold">tithe</h3>
                 <p>Mar 20,2026</p>
               </div>
               <p class="amount | fw-bold">-30000/=</p>
-                                <div class="delete-icon-wrapper">
-                  <svg class="delete-icon">
-                    <use xlink:href="../src/assets/images/misc/delete.svg#delete-icon"></use>
-                  </svg>
-                </div>              
+              <div class="delete-icon-wrapper">
+                <svg class="delete-icon">
+                  <use xlink:href="../src/assets/images/misc/delete.svg#delete-icon"></use>
+                </svg>
+              </div>
             </li>
           </ul>
         </section>
       </div>
     </div>
   </main>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="primaryfooter-wrapper">
+        <!-- Logo & Copy right -->
+        <div>
+          <div class="footer-logo-wrapper">
+            <a href="#">
+              <svg class="logo">
+                <use xlink:href="../src/assets/images/logo/logo.svg#logo"></use>
+              </svg>
+            </a>
+          </div>
+          <p>&copy; 2026. All rights reserved.</p>
+        </div>
+        <!-- Social Links -->
+        <nav class="footer-social-navigation" aria-labe="social-links-navigation">
+          <ul class="footer-social-links" aria-label="social-links-list" role="list">
+            <!-- github -->
+            <li><a href="#">
+                <svg class="icon">
+                  <use xlink:href="#github-1"></use>
+                </svg>
+              </a></li>
+            <!-- twitter -->
+            <li><a href="#">
+                <svg class="icon">
+                  <use xlink:href="#twitter"></use>
+                </svg>
+              </a></li>
+            <!-- linkedin -->
+            <li><a href="#">
+                <svg class="icon">
+                  <use xlink:href="#linkedin"></use>
+                </svg>
+              </a></li>
+            <!-- instagram -->
+            <li><a href="#">
+                <svg class="icon">
+                  <use xlink:href="#instagram"></use>
+                </svg>
+              </a></li>
+            <!-- youtube -->
+            <li><a href="#">
+                <svg class="icon">
+                  <use xlink:href="#youtube"></use>
+                </svg>
+              </a></li>
+            <!-- facebook -->
+            <li><a href="#">
+                <svg class="icon">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+              </a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
 </body>
-
 </html>
+

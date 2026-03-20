@@ -147,11 +147,13 @@ main,.dashboard{
 }
 
 }
+
 section {  
   background-color:var(--clr-neutral-800);
   border-radius:var(--border-radius-l);
   padding: 1rem 1.6rem;
 }
+
 
 /* =====================
     COMPONENTS

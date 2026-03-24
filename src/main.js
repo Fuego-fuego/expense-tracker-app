@@ -2,11 +2,31 @@ const newTransactionForm = document.querySelector("#newTransactionForm");
 const transactionHistoryList = document.querySelector("#transactionHistoryList");
 let allTransactions = [];
 
+const totalIncome =  document.querySelector('#totalIncome');
+const totalExpense =  document.querySelector('#totalExpense');
+const totalBalance =  document.querySelector('#totalBalance');
 
 
 const updateBalanceSummary = () =>{
+    let income = 0;
+    let expense = 0;
+    let balance = 0;
 
+allTransactions.forEach((transaction)=>{
 
+    if(transaction.type ==='income'){
+        income += parseInt(transaction.amount);
+        balance += parseInt(transaction.amount);
+    }else{
+        expense += parseInt(transaction.amount);
+        balance -= parseInt(transaction.amount);
+    }
+})
+totalIncome.textContent = income;
+totalExpense.textContent = expense;
+totalBalance.textContent = balance;
+
+return 0;
 }
 
 const creteNewTransaction = (transaction) => {
@@ -61,5 +81,7 @@ newTransactionForm.addEventListener("submit", (e) => {
         category: e.target.category.value,
     };
     transactionHistoryList.prepend(creteNewTransaction(data));
+    allTransactions.unshift(data);
+    updateBalanceSummary();
     newTransactionForm.reset();
 });

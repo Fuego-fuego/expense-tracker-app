@@ -13,7 +13,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
   <!-- main js script -->
-  <script type="module" src="/src/main.js" defer></script>
+  <script type="module" src="./src/main.js" defer></script>
 </head>
 <body>
   <main>
@@ -56,7 +56,7 @@
             </div>
           </div>
           <!-- FORM-->
-          <form class="new-transaction-form | flow" action="">
+          <form id="newTransactionForm" class="new-transaction-form | flow" action="">
             <!-- Type & Amount  -->
             <h2 class="text-clr-800 fs-secondary-heading capitalize ">
               add new transaction
@@ -64,45 +64,43 @@
             <div class="new-transaction-form-group">
               <!-- Type -->
               <div class="new-transaction-form-type-wrapper | new-transaction-form-input-wrapper">
-                <label class="capitalize" for="new-transaction-form-type">type</label>
-                <select class="new-transaction-form-input  | capitalize" name="new-transaction-form-type"
-                  id="new-transaction-form-type">
+                <label class="capitalize" for="type">type</label>
+                <select class="new-transaction-form-input  | capitalize" name="type"
+                  >
                   <option value="income">income</option>
                   <option value="expense">expense</option>
                 </select>
               </div>
               <!-- Amount -->
               <div class="new-transaction-form-amount-wrapper | new-transaction-form-input-wrapper">
-                <label class="capitalize" for="new-transaction-form-amount">amount</label>
-                <input class="new-transaction-form-input" type="text" id="new-transaction-form-amount"
-                  name="new-transaction-form-amount" placeholder="0/=">
+                <label class="capitalize" for="amount">amount</label>
+                <input class="new-transaction-form-input" type="text" name="amount" placeholder="0/=">
               </div>
             </div>
             <!-- Date & Category  -->
             <div class="new-transaction-form-group">
               <!-- Date -->
               <div class="new-transaction-form-date-wrapper | new-transaction-form-input-wrapper">
-                <label class="capitalize" for="new-transaction-form-date">date</label>
-                <input class="new-transaction-form-input" type="date" id="new-transaction-form-date"
-                  name="new-transaction-form-date">
+                <label class="capitalize" for="date">date</label>
+                <input class="new-transaction-form-input" type="date" name="date">
               </div>
               <!-- Category -->
               <div class="new-transaction-form-category-wrapper | new-transaction-form-input-wrapper">
-                <label class="capitalize" for="new-transaction-form-category">category</label>
-                <input class="new-transaction-form-input" type="text" id="new-transaction-form-category"
-                  name="new-transaction-form-category" placeholder="e.g. Salary, Rent">
+                <label class="capitalize" for="category">category</label>
+                <input class="new-transaction-form-input" type="text" name="category" placeholder="e.g. Salary, Rent">
               </div>
             </div>
             <!-- Submit Button -->
-            <div class="new-transaction-form-submit-btn-wrapper"><input
+            <div class="new-transaction-form-submit-btn-wrapper"><input id="newTransactionFormSubmitBtn"
                 class="new-transaction-form-submit-btn | capitalize" type="submit" value="add transaction"></div>
           </form>
         </section>
         <!-- Transaction History -->
         <section class="transaction-history">
           <h2 class="text-clr-900 fs-primary-heading fw-semi-bold capitalize">transaction history</h2>
-          <ul class="transaction-history-list" role="list">
-            <li class="transaction" data-type="income">
+          <ul id="transactionHistoryList" class="transaction-history-list" role="list">
+            <!-- INCOME  -->
+            <!-- <li class="transaction" data-type="income">
               <div>
                 <h3 class="text-clr-900 capitalize fs-secondry-heading fw-semi-bold">salary</h3>
                 <p>Mar 20,2026</p>
@@ -113,8 +111,9 @@
                   <use xlink:href="../src/assets/images/misc/delete.svg#delete-icon"></use>
                 </svg>
               </div>
-            </li>
-            <li class="transaction" data-type="expense">
+            </li> -->
+            <!-- EXPENSE -->
+            <!-- <li class="transaction" data-type="expense">
               <div>
                 <h3 class="text-clr-900 capitalize fs-secondry-heading fw-semi-bold">tithe</h3>
                 <p>Mar 20,2026</p>
@@ -125,7 +124,7 @@
                   <use xlink:href="../src/assets/images/misc/delete.svg#delete-icon"></use>
                 </svg>
               </div>
-            </li>
+            </li> -->
           </ul>
         </section>
       </div>
@@ -150,7 +149,7 @@
         <nav class="footer-social-navigation" aria-labe="social-links-navigation">
           <ul class="footer-social-links | flex" aria-label="social-links-list" role="list">
             <!-- github -->
-            <li><a href="#">
+            <li><a href="#" class="primary-footer-social-link-btn">
                 <svg class="footer-social-icon">
                   <use xlink:href="../src/assets/images/social-icons/social.svg#github"></use>
                 </svg>

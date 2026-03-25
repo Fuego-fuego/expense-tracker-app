@@ -7,6 +7,8 @@ const totalExpense =  document.querySelector('#totalExpense');
 const totalBalance =  document.querySelector('#totalBalance');
 
 
+
+
 const updateBalanceSummary = () =>{
     let income = 0;
     let expense = 0;
@@ -48,7 +50,7 @@ const creteNewTransaction = (transaction) => {
     <p>${formattedDate}</p>
 </div>
 <p class="amount | fw-bold">+${amount}/=</p>
-<div class="delete-icon-wrapper">
+<div class="delete-icon-wrapper" >
     <svg class="delete-icon">
         <use xlink:href="../src/assets/images/misc/delete.svg#delete-icon"></use>
     </svg>
@@ -68,6 +70,11 @@ const creteNewTransaction = (transaction) => {
     </div>
     `;
     }
+const deleteBtn = newTransaction.querySelector(".delete-icon-wrapper");
+deleteBtn.addEventListener('click',() => {       
+    deleteBtn.closest('.transaction').remove();
+})
+
     return newTransaction;
 };
 

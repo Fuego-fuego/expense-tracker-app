@@ -71,10 +71,13 @@ const creteNewTransaction = (transaction) => {
     `;
     }
 const deleteBtn = newTransaction.querySelector(".delete-icon-wrapper");
-deleteBtn.addEventListener('click',() => {       
-    deleteBtn.closest('.transaction').remove();
+deleteBtn.addEventListener('click',() => { 
+    const currentTransaction = deleteBtn.closest('.transaction');
+    const index = Array.from(transactionHistoryList.children).indexOf(currentTransaction);
+    allTransactions.splice(index,1);
+    updateBalanceSummary();
+    currentTransaction.remove();
 })
-
     return newTransaction;
 };
 
